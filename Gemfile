@@ -17,7 +17,7 @@ group :development, :test do
   gem 'byebug'
   gem "vcr"
   gem "capybara"
-  gem "fakeweb"
+  gem "webmock"
 end
 
 group :development do
