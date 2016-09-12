@@ -1,11 +1,12 @@
-Name, Address, Fuel Types, Distance, and Access Times
+<div class="container">
 
-<% @stations.each do |station| %>
-  <div class="station">
-    <%= station.name %>
-    <%= station.address %>
-    <%= station.fuel_type %>
-    <%= station.distance %>
-    <%= station.access_times %>
-  </div>
-<% end %>
+  <% @stations.each do |station| %>
+    <div class="station">
+      <h4>Name: <%= station.name %></h4>
+      <h5>Address: <%= station.address %></h5>
+      <h5>Fuel Types: <%= station.fuel_type %></h5>
+      <h5>Distance: <%= station.distance %></h5>
+      <h5>Access Times: <%= station.access_times %></h5>
+    </div>
+  <% end %>
+</div>

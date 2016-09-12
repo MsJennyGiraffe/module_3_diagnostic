@@ -14,8 +14,8 @@ RSpec.feature "user can find the closest 10 stations" do
       expect(page).to have_content("Distance")
       expect(page).to have_content("Access Times")
       expect(page).to have_content("ELEC")
-      expect(page).to have_content("LPG")
       expect(page).to_not have_content("E85")
+      expect(page).to have_selector('.station', count: 10)
     end
   end
 end
