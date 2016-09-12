@@ -1,6 +1,7 @@
 Name, Address, Fuel Types, Distance, and Access Times
 
-<%# @stations.each do |station| %>
+<% @stations.each do |station| %>
   <div class="station">
-    <%#= station. %>
+    <%= station["station_name"]%>
   </div>
+<% end %>

@@ -12,6 +12,7 @@ describe NrelService do
         expect(location["fuel_type_code"]).to eq("ELEC")
         expect(location["distance"]).to eq(0.3117)
         expect(location["access_days_time"]).to eq("24 hours daily")
+        expect(locations.count).to eq(10)
       end
     end
   end

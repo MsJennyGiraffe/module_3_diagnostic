@@ -2,17 +2,19 @@ require 'rails_helper'
 
 RSpec.feature "user can find the closest 10 stations" do
   scenario "when a user types in a zipcode they get stations" do
-    visit "/"
-    fill_in :q, with: 80203
-    click_button "Locate"
-    expect(current_path).to eq("/search")
-    #expect(current_path).to eq("/search?80203")
-    expect(page).to have_content("Name")
-    expect(page).to have_content("Address")
-    expect(page).to have_content("Fuel Types")
-    expect(page).to have_content("Distance")
-    expect(page).to have_content("Access Times")
-    expect(page).to have_css("station")
+    VCR.use_cassette("stations by zip") do
+      visit "/"
+      fill_in :q, with: 80203
+      click_button "Locate"
+      expect(current_path).to eq("/search")
+      #expect(current_path).to eq("/search?80203")
+      expect(page).to have_content("Name")
+      expect(page).to have_content("Address")
+      expect(page).to have_content("Fuel Types")
+      expect(page).to have_content("Distance")
+      expect(page).to have_content("Access Times")
+      expect(page).to have_css("station")
+    end
   end
 end
 
