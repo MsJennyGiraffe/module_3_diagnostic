@@ -16,4 +16,10 @@ describe NrelService do
       end
     end
   end
+
+  context "get_by_distance" do
+    it "returns a list of stations by distnace" do
+      VCR.use_cassette("stations by distnace")
+    end
+  end
 end

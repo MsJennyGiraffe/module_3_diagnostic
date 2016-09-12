@@ -9,6 +9,11 @@ class NrelService
     parse(response.body)["fuel_stations"].take(10)
   end
 
+  def get_by_distance(zipcode, distance)
+    response = @conn.get("?location=80203&api_key=#{ENV['NREL_KEY']}&radius=#{distance}")
+    parse(response.body)["fuel_stations"]
+  end
+
   private
     def parse(response)
       JSON.parse(response)
