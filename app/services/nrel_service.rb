@@ -5,7 +5,7 @@ class NrelService
   end
 
   def get_by_zipcode(zipcode)
-    response = @conn.get("?location=80203&api_key=#{ENV['NREL_KEY']}&radius=6")
+    response = @conn.get("?location=80203&api_key=#{ENV['NREL_KEY']}&radius=6&fuel_type=ELEC, LPG")
     parse(response.body)["fuel_stations"].take(10)
   end
 
